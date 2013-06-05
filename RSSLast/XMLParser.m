@@ -44,10 +44,14 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
     _ElementValue = [[NSMutableString alloc] init];
+    if([elementName isEqualToString:@"media:content"]){
+        [_item setObject:[attributeDict objectForKey:@"url"] forKey:@"url"];
+       // NSLog(@"%@",[attributeDict objectForKey:@"url"]);
+    }
    }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
-    NSLog(@"%@",_ElementValue);
+   // NSLog(@"%@",_ElementValue);
     [_ElementValue appendString:string];}
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
@@ -63,14 +67,14 @@
     else if ([elementName isEqualToString:@"pubDate"]) {
         [_item setObject:_ElementValue forKey:elementName];
         [ _articles addObject:_item];
-        _item = [[NSMutableDictionary alloc] init];
-
+           }
+    else if ([elementName isEqualToString:@"media:content"]){
+        _item = [NSMutableDictionary dictionary];
     }
     else {
         _ElementValue = [[NSMutableString alloc] init];
     }
 }
-
 
 
 @end

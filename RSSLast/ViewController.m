@@ -5,7 +5,7 @@
 //  Created by Maynard Tong on 6/3/13.
 //  Copyright (c) 2013 Maynard Tong. All rights reserved.
 //
-
+#import "CustomTableViewCell.h"
 #import "ViewController.h"
 #import "XMLParser.h"
 #import "NSURLConnection+NSURLConnectionSendRequestAdditions.h"
@@ -44,18 +44,29 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //Where we configure the cell in each row
     
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell;
+  static NSString *CellIdentifier = @"CustomTableViewCell";
+    CustomTableViewCell *cell;
     
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell_iPhone" owner:self options:nil];
+        for (id currentObject in nib) {
+            if ([currentObject isKindOfClass:[CustomTableViewCell class]])  {
+                cell = (CustomTableViewCell *) currentObject;
+                break;
+            }
+        }
     }
     // Configure the cell... setting the text of our cell's label
-    cell.textLabel.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"title"];
-    cell.detailTextLabel.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
-    return cell;
-}
+    //cell.feedimage.image = nil;
+    
+     cell.title.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"title"];
+     //cell.pubDate.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
+    
+   
+     return cell;
+
+ }
 
 /*
  // Override to support conditional editing of the table view.

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5347E8E175F1E8C0061C292 /* CustomTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5347E8D175F1E8B0061C292 /* CustomTableView.xib */; };
+		E5347E91175F1EA40061C292 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5347E90175F1EA40061C292 /* CustomTableViewCell.m */; };
 		E5BE45DF175CAFFC00A9471D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BE45DE175CAFFC00A9471D /* UIKit.framework */; };
 		E5BE45E1175CAFFC00A9471D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BE45E0175CAFFC00A9471D /* Foundation.framework */; };
 		E5BE45E3175CAFFC00A9471D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BE45E2175CAFFC00A9471D /* CoreGraphics.framework */; };
@@ -24,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E5347E8D175F1E8B0061C292 /* CustomTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableView.xib; sourceTree = "<group>"; };
+		E5347E8F175F1EA40061C292 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		E5347E90175F1EA40061C292 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		E5BE45DB175CAFFC00A9471D /* RSSLast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSLast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5BE45DE175CAFFC00A9471D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E5BE45E0175CAFFC00A9471D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,6 +69,9 @@
 		E5BE45D2175CAFFC00A9471D = {
 			isa = PBXGroup;
 			children = (
+				E5347E8F175F1EA40061C292 /* CustomTableViewCell.h */,
+				E5347E90175F1EA40061C292 /* CustomTableViewCell.m */,
+				E5347E8D175F1E8B0061C292 /* CustomTableView.xib */,
 				E5EBC137175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.h */,
 				E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */,
 				E5BE45E4175CAFFC00A9471D /* RSSLast */,
@@ -177,6 +185,7 @@
 				E5BE45F5175CAFFC00A9471D /* Default-568h@2x.png in Resources */,
 				E5BE45FB175CAFFC00A9471D /* ViewController_iPhone.xib in Resources */,
 				E5BE45FE175CAFFC00A9471D /* ViewController_iPad.xib in Resources */,
+				E5347E8E175F1E8C0061C292 /* CustomTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +201,7 @@
 				E5BE45F8175CAFFC00A9471D /* ViewController.m in Sources */,
 				E5BE4606175CB0B000A9471D /* XMLParser.m in Sources */,
 				E5EBC139175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m in Sources */,
+				E5347E91175F1EA40061C292 /* CustomTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
