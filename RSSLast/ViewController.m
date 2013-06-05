@@ -122,12 +122,11 @@
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableString *text =[[[_items objectAtIndex:indexPath.row] objectForKey:@"title"] copy];
-    CGSize constraint = CGSizeMake( 320.0f - (10.0f * 2), 20000.0f);
-    
+    CGSize constraint = CGSizeMake( 204.0f - (10.0f * 2), 20000.0f);
     CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
     
     CGFloat height = MAX(size.height, 44.0f);
     
-    return height + (30.0f * 2);
+    return height + (10.0f * 2);
 }
 @end

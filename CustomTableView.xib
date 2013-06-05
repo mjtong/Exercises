@@ -43,7 +43,7 @@
 							<object class="IBUILabel" id="235976832">
 								<reference key="NSNextResponder" ref="631183112"/>
 								<int key="NSvFlags">306</int>
-								<string key="NSFrame">{{96, 0}, {204, 21}}</string>
+								<string key="NSFrame">{{96, 0}, {204, 27}}</string>
 								<reference key="NSSuperview" ref="631183112"/>
 								<reference key="NSNextKeyView" ref="460151570"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -62,6 +62,7 @@
 									<bytes key="NSWhite">MQA</bytes>
 								</object>
 								<int key="IBUIBaselineAdjustment">0</int>
+								<bool key="IBUIAdjustsLetterSpacingToFitWidth">YES</bool>
 								<int key="IBUINumberOfLines">0</int>
 								<int key="IBUILineBreakMode">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription" id="120847446">
@@ -79,12 +80,13 @@
 							<object class="IBUILabel" id="460151570">
 								<reference key="NSNextResponder" ref="631183112"/>
 								<int key="NSvFlags">282</int>
-								<string key="NSFrame">{{96, 20}, {204, 21}}</string>
+								<string key="NSFrame">{{96, 29}, {204, 12}}</string>
 								<reference key="NSSuperview" ref="631183112"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUIContentMode">1</int>
+								<int key="IBUIContentMode">6</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">Label</string>
