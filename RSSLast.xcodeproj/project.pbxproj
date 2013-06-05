@@ -19,6 +19,8 @@
 		E5BE45F8175CAFFC00A9471D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BE45F7175CAFFC00A9471D /* ViewController.m */; };
 		E5BE45FB175CAFFC00A9471D /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BE45F9175CAFFC00A9471D /* ViewController_iPhone.xib */; };
 		E5BE45FE175CAFFC00A9471D /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BE45FC175CAFFC00A9471D /* ViewController_iPad.xib */; };
+		E5BE4606175CB0B000A9471D /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BE4605175CB0B000A9471D /* XMLParser.m */; };
+		E5EBC139175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		E5BE45F7175CAFFC00A9471D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E5BE45FA175CAFFC00A9471D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		E5BE45FD175CAFFC00A9471D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		E5BE4604175CB0B000A9471D /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		E5BE4605175CB0B000A9471D /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		E5EBC137175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.h"; sourceTree = "<group>"; };
+		E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,8 @@
 		E5BE45D2175CAFFC00A9471D = {
 			isa = PBXGroup;
 			children = (
+				E5EBC137175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.h */,
+				E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */,
 				E5BE45E4175CAFFC00A9471D /* RSSLast */,
 				E5BE45DD175CAFFC00A9471D /* Frameworks */,
 				E5BE45DC175CAFFC00A9471D /* Products */,
@@ -90,6 +98,8 @@
 				E5BE45F6175CAFFC00A9471D /* ViewController.h */,
 				E5BE45F7175CAFFC00A9471D /* ViewController.m */,
 				E5BE45F9175CAFFC00A9471D /* ViewController_iPhone.xib */,
+				E5BE4604175CB0B000A9471D /* XMLParser.h */,
+				E5BE4605175CB0B000A9471D /* XMLParser.m */,
 				E5BE45FC175CAFFC00A9471D /* ViewController_iPad.xib */,
 				E5BE45E5175CAFFC00A9471D /* Supporting Files */,
 			);
@@ -180,6 +190,8 @@
 				E5BE45EB175CAFFC00A9471D /* main.m in Sources */,
 				E5BE45EF175CAFFC00A9471D /* AppDelegate.m in Sources */,
 				E5BE45F8175CAFFC00A9471D /* ViewController.m in Sources */,
+				E5BE4606175CB0B000A9471D /* XMLParser.m in Sources */,
+				E5EBC139175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +289,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RSSLast/RSSLast-Prefix.pch";
 				INFOPLIST_FILE = "RSSLast/RSSLast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -288,6 +301,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RSSLast/RSSLast-Prefix.pch";
 				INFOPLIST_FILE = "RSSLast/RSSLast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -312,6 +326,7 @@
 				E5BE4603175CAFFC00A9471D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
