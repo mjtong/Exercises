@@ -49,7 +49,7 @@
     
     cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomTableViewCell_iPhone" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CustomTableView" owner:self options:nil];
         for (id currentObject in nib) {
             if ([currentObject isKindOfClass:[CustomTableViewCell class]])  {
                 cell = (CustomTableViewCell *) currentObject;
@@ -58,10 +58,11 @@
         }
     }
     // Configure the cell... setting the text of our cell's label
-    //cell.feedimage.image = nil;
-    
+    NSURL *url = [NSURL URLWithString:[[_items objectAtIndex:indexPath.row]objectForKey:@"url" ]];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+      cell.feedImage.image = [[UIImage alloc] initWithData:data];
      cell.title.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"title"];
-     //cell.pubDate.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
+     cell.date.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
     
    
      return cell;
@@ -117,5 +118,16 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSMutableString *text =[[[_items objectAtIndex:indexPath.row] objectForKey:@"title"] copy];
+    CGSize constraint = CGSizeMake( 320.0f - (10.0f * 2), 20000.0f);
+    
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    
+    CGFloat height = MAX(size.height, 44.0f);
+    
+    return height + (30.0f * 2);
 }
 @end
