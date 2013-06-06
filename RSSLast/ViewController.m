@@ -10,14 +10,19 @@
 #import "XMLParser.h"
 #import "NSURLConnection+NSURLConnectionSendRequestAdditions.h"
 //@synthesize
+@interface ViewController()
+@end
 @implementation ViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"RSS Feeds";
-    NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:@"http://news.yahoo.com/rss/entertainment" error:nil];
+    NSString *url = [self.feedInfo objectForKey:@"url"];
+    NSString *title = [self.feedInfo objectForKey:@"title"];
+    self.title = title;
+    NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:url error:nil];
     _items = [XMLParser feedItemsWithRSSData:xmlFile];
+    //[_tableView reloadData];
     //_items = [[NSArray alloc] initWithObjects:@"Item No. 1", @"Item No. 2", @"Item No. 3", @"Item No. 4", @"Item No. 5", @"Item No. 6", nil];
     //NSLog(@"test %d", [_items count]);
     

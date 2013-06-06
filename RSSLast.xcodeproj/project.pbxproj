@@ -22,6 +22,8 @@
 		E5BE45FB175CAFFC00A9471D /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BE45F9175CAFFC00A9471D /* ViewController_iPhone.xib */; };
 		E5BE45FE175CAFFC00A9471D /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BE45FC175CAFFC00A9471D /* ViewController_iPad.xib */; };
 		E5BE4606175CB0B000A9471D /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BE4605175CB0B000A9471D /* XMLParser.m */; };
+		E5C1110D17601AB100AB1D92 /* FeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C1110B17601AB100AB1D92 /* FeedListViewController.m */; };
+		E5C1110E17601AB100AB1D92 /* FeedListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C1110C17601AB100AB1D92 /* FeedListViewController.xib */; };
 		E5EBC139175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,9 @@
 		E5BE45FD175CAFFC00A9471D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		E5BE4604175CB0B000A9471D /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		E5BE4605175CB0B000A9471D /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		E5C1110A17601AB100AB1D92 /* FeedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedListViewController.h; sourceTree = "<group>"; };
+		E5C1110B17601AB100AB1D92 /* FeedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedListViewController.m; sourceTree = "<group>"; };
+		E5C1110C17601AB100AB1D92 /* FeedListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedListViewController.xib; sourceTree = "<group>"; };
 		E5EBC137175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.h"; sourceTree = "<group>"; };
 		E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +108,9 @@
 			children = (
 				E5BE45ED175CAFFC00A9471D /* AppDelegate.h */,
 				E5BE45EE175CAFFC00A9471D /* AppDelegate.m */,
+				E5C1110A17601AB100AB1D92 /* FeedListViewController.h */,
+				E5C1110B17601AB100AB1D92 /* FeedListViewController.m */,
+				E5C1110C17601AB100AB1D92 /* FeedListViewController.xib */,
 				E5BE45F6175CAFFC00A9471D /* ViewController.h */,
 				E5BE45F7175CAFFC00A9471D /* ViewController.m */,
 				E5BE45F9175CAFFC00A9471D /* ViewController_iPhone.xib */,
@@ -186,6 +194,7 @@
 				E5BE45FB175CAFFC00A9471D /* ViewController_iPhone.xib in Resources */,
 				E5BE45FE175CAFFC00A9471D /* ViewController_iPad.xib in Resources */,
 				E5347E8E175F1E8C0061C292 /* CustomTableView.xib in Resources */,
+				E5C1110E17601AB100AB1D92 /* FeedListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +211,7 @@
 				E5BE4606175CB0B000A9471D /* XMLParser.m in Sources */,
 				E5EBC139175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m in Sources */,
 				E5347E91175F1EA40061C292 /* CustomTableViewCell.m in Sources */,
+				E5C1110D17601AB100AB1D92 /* FeedListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

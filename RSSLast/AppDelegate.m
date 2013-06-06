@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "FeedListViewController.h"
 #import "ViewController.h"
 
 @implementation AppDelegate
@@ -15,14 +15,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+        self.navController = [[UINavigationController alloc] initWithRootViewController:[[FeedListViewController alloc] initWithNibName:@"FeedListViewController" bundle:nil]];
     } else {
-        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+       self.navController = [[UINavigationController alloc] initWithRootViewController:[[FeedListViewController alloc] initWithNibName:@"FeedListViewController" bundle:nil]];
     }
-    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-       self.window.rootViewController = navCon;
+    self.window.rootViewController = self.navController;
     [self.window makeKeyAndVisible];
     return YES;
 }
