@@ -125,7 +125,7 @@
     CGSize constraint = CGSizeMake( 204.0f - (8.0f * 2), 20000.0f);
     CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
     
-    CGFloat height = MAX(size.height, 44.0f);
+    CGFloat height = MAX(size.height, 24.0f);
     
     return height + (8.0f * 2) + 16;
 }

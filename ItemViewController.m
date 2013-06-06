@@ -7,7 +7,7 @@
 //
 
 #import "ItemViewController.h"
-
+#import "FullStoryViewController.h";
 @interface ItemViewController ()
 @end
 
@@ -26,8 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIBarButtonItem *fullStory = [[UIBarButtonItem alloc] initWithTitle:@"Full Story" style:UIBarButtonItemStylePlain target:self action:@selector(gotoLink:)];
+    UIBarButtonItem *fullStory = [[UIBarButtonItem alloc] initWithTitle:@"Full Story" style:UIBarButtonItemStylePlain target:self action:@selector(viewFullStory:)];
+    UIBarButtonItem *gotoLink = [[UIBarButtonItem alloc] initWithTitle:@"Visit Link" style:UIBarButtonItemStylePlain target:self action:@selector(gotoLink:)];
     self.navigationItem.rightBarButtonItem = fullStory;
+   // [self.navigationItem.
     _header.text = [_feeditem objectForKey:@"title"];
     _date.text = [_feeditem objectForKey:@"pubDate"];
     _content.text = [_feeditem objectForKey:@"description"];
@@ -46,6 +48,11 @@
     [super viewDidUnload];
 }
 
+-(void) viewFullStory : (id)sender{
+    FullStoryViewController *fullStoryViewController = [[FullStoryViewController alloc]initWithNibName:@"FullStoryViewController" bundle:nil];
+    fullStoryViewController.url = [_feeditem objectForKey:@"link"];
+    [self.navigationController pushViewController:fullStoryViewController animated:YES];
+}
 -(void) gotoLink : (id)sender{
     NSString *url = [_feeditem objectForKey:@"link"];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];

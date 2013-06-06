@@ -26,6 +26,8 @@
 		E5C1110E17601AB100AB1D92 /* FeedListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C1110C17601AB100AB1D92 /* FeedListViewController.xib */; };
 		E5C111121760351600AB1D92 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C111101760351600AB1D92 /* ItemViewController.m */; };
 		E5C111131760351600AB1D92 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C111111760351600AB1D92 /* ItemViewController.xib */; };
+		E5C1111717604B7F00AB1D92 /* FullStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C1111517604B7F00AB1D92 /* FullStoryViewController.m */; };
+		E5C1111817604B7F00AB1D92 /* FullStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C1111617604B7F00AB1D92 /* FullStoryViewController.xib */; };
 		E5EBC139175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,9 @@
 		E5C1110F1760351600AB1D92 /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
 		E5C111101760351600AB1D92 /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
 		E5C111111760351600AB1D92 /* ItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemViewController.xib; sourceTree = "<group>"; };
+		E5C1111417604B7F00AB1D92 /* FullStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullStoryViewController.h; sourceTree = "<group>"; };
+		E5C1111517604B7F00AB1D92 /* FullStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullStoryViewController.m; sourceTree = "<group>"; };
+		E5C1111617604B7F00AB1D92 /* FullStoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullStoryViewController.xib; sourceTree = "<group>"; };
 		E5EBC137175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.h"; sourceTree = "<group>"; };
 		E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				E5347E8F175F1EA40061C292 /* CustomTableViewCell.h */,
+				E5C1111417604B7F00AB1D92 /* FullStoryViewController.h */,
+				E5C1111517604B7F00AB1D92 /* FullStoryViewController.m */,
+				E5C1111617604B7F00AB1D92 /* FullStoryViewController.xib */,
 				E5347E90175F1EA40061C292 /* CustomTableViewCell.m */,
 				E5347E8D175F1E8B0061C292 /* CustomTableView.xib */,
 				E5EBC137175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.h */,
@@ -204,6 +212,7 @@
 				E5347E8E175F1E8C0061C292 /* CustomTableView.xib in Resources */,
 				E5C1110E17601AB100AB1D92 /* FeedListViewController.xib in Resources */,
 				E5C111131760351600AB1D92 /* ItemViewController.xib in Resources */,
+				E5C1111817604B7F00AB1D92 /* FullStoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +231,7 @@
 				E5347E91175F1EA40061C292 /* CustomTableViewCell.m in Sources */,
 				E5C1110D17601AB100AB1D92 /* FeedListViewController.m in Sources */,
 				E5C111121760351600AB1D92 /* ItemViewController.m in Sources */,
+				E5C1111717604B7F00AB1D92 /* FullStoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
