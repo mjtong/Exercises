@@ -11,7 +11,7 @@
 
 @property (nonatomic,strong)    NSMutableArray* articles;
 @property (nonatomic,strong)    NSString *currentElement;
-@property (nonatomic,strong)    NSMutableString *ElementValue;
+@property (nonatomic,strong)    NSMutableString *elementValue;
 @property (nonatomic,strong)  NSMutableDictionary* item;
 
 -(NSArray *) arrayWithData:(NSData*)data;
@@ -43,7 +43,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
-    _ElementValue = [[NSMutableString alloc] init];
+    _elementValue = [[NSMutableString alloc] init];
     if([elementName isEqualToString:@"media:content"]){
         [(NSMutableDictionary *)[_articles lastObject] setObject:[attributeDict objectForKey:@"url"] forKey:@"url"];
 
@@ -53,26 +53,27 @@
    }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
-   // NSLog(@"%@",_ElementValue);
-    [_ElementValue appendString:string];}
+    NSLog(@"%@",string);
+    [_elementValue appendString:string];}
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
+    NSLog(@"%@",elementName);
     if ([elementName isEqualToString:@"title"]) {
-        [_item setObject:_ElementValue forKey:elementName];
+        [_item setObject:_elementValue forKey:elementName];
     }
     else if ([elementName isEqualToString:@"link"]) {
-        [_item setObject:_ElementValue forKey:elementName];
+        [_item setObject:_elementValue forKey:elementName];
     }
     else if ([elementName isEqualToString:@"description"]) {
-        [_item setObject:_ElementValue forKey:elementName];
+        [_item setObject:_elementValue forKey:elementName];
     }
     else if ([elementName isEqualToString:@"pubDate"]) {
-        [_item setObject:_ElementValue forKey:elementName];
+        [_item setObject:_elementValue forKey:elementName];
          [ _articles addObject:_item];
           _item = [NSMutableDictionary dictionary];
            }
     else {
-        _ElementValue = [[NSMutableString alloc] init];
+        _elementValue = [[NSMutableString alloc] init];
     }
 }
 

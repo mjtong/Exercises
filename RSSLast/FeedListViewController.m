@@ -57,7 +57,7 @@
     title.placeholder = @"Enter Title Here:";
     title.textAlignment = UITextAlignmentCenter;
     title.keyboardAppearance = UIKeyboardAppearanceAlert;
-    [alert addSubview:title];
+    
     UITextField *url = [[UITextField alloc] init];
     [url setBackgroundColor:[UIColor whiteColor]];
     url.borderStyle = UITextBorderStyleLine;
@@ -66,6 +66,8 @@
     url.placeholder = @"Enter RSS Url Here:";
     url.textAlignment = UITextAlignmentCenter;
     url.keyboardAppearance = UIKeyboardAppearanceAlert;
+    
+    [alert addSubview:title];
     [alert addSubview:url];
     [alert show];
 }
@@ -144,11 +146,9 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    NSLog(@"%d",[[alertView subviews] count]);
+  //  NSLog(@"%d",[[alertView subviews] count]);
     NSString* title = ((UITextField*)[[alertView subviews] objectAtIndex:5]).text;
     NSString* url = ((UITextField*)[[alertView subviews] objectAtIndex:6]).text;
-    NSLog(@"String is: %@", title);
-     NSLog(@"String is: %@", url);
     if ([url length] <= 0 || buttonIndex == 0 || [title length] <= 0){
         return;     }
     if (buttonIndex == 1) {
@@ -156,9 +156,8 @@
             feedlist = [[NSMutableArray alloc] init];
         }
         NSMutableDictionary *feed = [[NSMutableDictionary alloc]initWithObjectsAndKeys:url,@"url",title,@"title",nil];
-        
         [feedlist insertObject:feed atIndex:0];
-        NSLog(@"%d",[feedlist count]);
+        //NSLog(@"%d",[feedlist count]);
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [self.feedlisttable insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }

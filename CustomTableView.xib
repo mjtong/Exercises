@@ -42,9 +42,10 @@
 						<array class="NSMutableArray" key="NSSubviews">
 							<object class="IBUILabel" id="235976832">
 								<reference key="NSNextResponder" ref="631183112"/>
-								<int key="NSvFlags">306</int>
-								<string key="NSFrame">{{96, 0}, {204, 27}}</string>
+								<int key="NSvFlags">274</int>
+								<string key="NSFrame">{{96, 5}, {204, 16}}</string>
 								<reference key="NSSuperview" ref="631183112"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="460151570"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -65,11 +66,11 @@
 								<bool key="IBUIAdjustsLetterSpacingToFitWidth">YES</bool>
 								<int key="IBUINumberOfLines">0</int>
 								<int key="IBUILineBreakMode">0</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="120847446">
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">17</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="968084167">
+								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">17</double>
 									<int key="NSfFlags">16</int>
@@ -79,14 +80,13 @@
 							</object>
 							<object class="IBUILabel" id="460151570">
 								<reference key="NSNextResponder" ref="631183112"/>
-								<int key="NSvFlags">282</int>
-								<string key="NSFrame">{{96, 29}, {204, 12}}</string>
+								<int key="NSvFlags">301</int>
+								<string key="NSFrame">{{96, 25}, {204, 16}}</string>
 								<reference key="NSSuperview" ref="631183112"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSWindow"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
-								<int key="IBUIContentMode">6</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<string key="IBUIText">Label</string>
@@ -94,8 +94,15 @@
 								<reference key="IBUIHighlightedColor" ref="703540504"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUILineBreakMode">0</int>
-								<reference key="IBUIFontDescription" ref="120847446"/>
-								<reference key="IBUIFont" ref="968084167"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<int key="type">1</int>
+									<double key="pointSize">14</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica</string>
+									<double key="NSSize">14</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 							<object class="IBUIImageView" id="942365237">
@@ -103,6 +110,7 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{5, 0}, {71, 41}}</string>
 								<reference key="NSSuperview" ref="631183112"/>
+								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="235976832"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
@@ -112,6 +120,7 @@
 						</array>
 						<string key="NSFrameSize">{300, 41}</string>
 						<reference key="NSSuperview" ref="583204424"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="942365237"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -127,6 +136,7 @@
 				</array>
 				<string key="NSFrameSize">{320, 42}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="631183112"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<int key="IBUIContentMode">2</int>
@@ -187,9 +197,9 @@
 						<int key="objectID">3</int>
 						<reference key="object" ref="583204424"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="235976832"/>
 							<reference ref="942365237"/>
 							<reference ref="460151570"/>
+							<reference ref="235976832"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -227,7 +237,37 @@
 			<nil key="sourceID"/>
 			<int key="maxID">37</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">CustomTableViewCell</string>
+					<string key="superclassName">UITableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="date">UILabel</string>
+						<string key="feedImage">UIImageView</string>
+						<string key="title">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="date">
+							<string key="name">date</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="feedImage">
+							<string key="name">feedImage</string>
+							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="title">
+							<string key="name">title</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CustomTableViewCell.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "XMLParser.h"
 #import "NSURLConnection+NSURLConnectionSendRequestAdditions.h"
+#import "ItemViewController.h"
 //@synthesize
 @interface ViewController()
 @end
@@ -17,15 +18,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadRSSData:)];
     NSString *url = [self.feedInfo objectForKey:@"url"];
     NSString *title = [self.feedInfo objectForKey:@"title"];
     self.title = title;
     NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:url error:nil];
     _items = [XMLParser feedItemsWithRSSData:xmlFile];
-    //[_tableView reloadData];
-    //_items = [[NSArray alloc] initWithObjects:@"Item No. 1", @"Item No. 2", @"Item No. 3", @"Item No. 4", @"Item No. 5", @"Item No. 6", nil];
-    //NSLog(@"test %d", [_items count]);
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -114,24 +113,28 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    // If you want to push another view upon tapping one of the cells on your table.
     
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+     ItemViewController *itemViewController = [[ItemViewController alloc] initWithNibName:@"ItemViewController" bundle:nil];
+    itemViewController.feeditem = [_items objectAtIndex:indexPath.row];
+     [self.navigationController pushViewController:itemViewController animated:YES];
+    
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableString *text =[[[_items objectAtIndex:indexPath.row] objectForKey:@"title"] copy];
-    CGSize constraint = CGSizeMake( 204.0f - (10.0f * 2), 20000.0f);
+    CGSize constraint = CGSizeMake( 204.0f - (8.0f * 2), 20000.0f);
     CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
     
     CGFloat height = MAX(size.height, 44.0f);
     
-    return height + (10.0f * 2);
+    return height + (8.0f * 2) + 16;
+}
+
+-(void) reloadRSSData: (id)sender{
+    NSString *url = [self.feedInfo objectForKey:@"url"];
+    NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:url error:nil];
+    //_items = [NSMutableArray array];
+    _items = [XMLParser feedItemsWithRSSData:xmlFile];
+    [_tableView reloadData];
 }
 @end
