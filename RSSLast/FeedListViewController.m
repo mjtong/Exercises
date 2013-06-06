@@ -31,7 +31,12 @@
     [super viewDidLoad];
     UIBarButtonItem *subscribeButton = [[UIBarButtonItem alloc] initWithTitle:@"Subscribe" style:UIBarButtonItemStylePlain target:self action:@selector(subscribeToFeed:)];
     self.navigationItem.rightBarButtonItem = subscribeButton;
-
+    NSMutableDictionary *feed1 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://news.yahoo.com/rss/entertainment",@"url",@"Yahoo Entertainment",@"title", nil];
+     NSMutableDictionary *feed2 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://news.yahoo.com/rss/sports",@"url",@"Yahoo Sports",@"title", nil];
+     NSMutableDictionary *feed3 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title", nil];
+    NSMutableArray *staticFeeds = [NSMutableArray arrayWithObjects:feed1,feed2,feed3, nil];
+    feedlist = [[NSMutableArray alloc] initWithArray:staticFeeds];
+    NSLog(@"%d",[feedlist count]);
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -66,7 +71,6 @@
     url.placeholder = @"Enter RSS Url Here:";
     url.textAlignment = UITextAlignmentCenter;
     url.keyboardAppearance = UIKeyboardAppearanceAlert;
-    
     [alert addSubview:title];
     [alert addSubview:url];
     [alert show];

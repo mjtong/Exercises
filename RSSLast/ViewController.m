@@ -24,7 +24,7 @@
     self.title = title;
     NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:url error:nil];
     _items = [XMLParser feedItemsWithRSSData:xmlFile];
-
+    
 }
 
 - (void)didReceiveMemoryWarning

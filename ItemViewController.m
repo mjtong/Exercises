@@ -17,7 +17,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title= @"Hello";
+        self.title= @"Item View";
         // Custom initialization
     }
     return self;
@@ -30,9 +30,13 @@
   //  UIBarButtonItem *gotoLink = [[UIBarButtonItem alloc] initWithTitle:@"Visit Link" style:UIBarButtonItemStylePlain target:self action:@selector(gotoLink:)];
     self.navigationItem.rightBarButtonItem = fullStory;
    // [self.navigationItem.
+    NSRange r;
+    NSString *s = [_feeditem objectForKey:@"description"];
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
     _header.text = [_feeditem objectForKey:@"title"];
     _date.text = [_feeditem objectForKey:@"pubDate"];
-    _content.text = [_feeditem objectForKey:@"description"];
+    _content.text = s;
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,6 +48,7 @@
 - (void)viewDidUnload {
     [self setTitle:nil];
     [self setDate:nil];
+    [self setContent:nil];
     [self setContent:nil];
     [super viewDidUnload];
 }

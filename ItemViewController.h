@@ -11,6 +11,6 @@
 @interface ItemViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *header;
 @property (weak, nonatomic) IBOutlet UILabel *date;
-@property (weak, nonatomic) IBOutlet UILabel *content;
+@property (weak, nonatomic) IBOutlet UITextView *content;
 @property NSDictionary *feeditem;
 @end
