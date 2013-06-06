@@ -7,7 +7,7 @@
 //
 
 #import "ItemViewController.h"
-#import "FullStoryViewController.h";
+#import "FullStoryViewController.h"
 @interface ItemViewController ()
 @end
 
@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     UIBarButtonItem *fullStory = [[UIBarButtonItem alloc] initWithTitle:@"Full Story" style:UIBarButtonItemStylePlain target:self action:@selector(viewFullStory:)];
-    UIBarButtonItem *gotoLink = [[UIBarButtonItem alloc] initWithTitle:@"Visit Link" style:UIBarButtonItemStylePlain target:self action:@selector(gotoLink:)];
+  //  UIBarButtonItem *gotoLink = [[UIBarButtonItem alloc] initWithTitle:@"Visit Link" style:UIBarButtonItemStylePlain target:self action:@selector(gotoLink:)];
     self.navigationItem.rightBarButtonItem = fullStory;
    // [self.navigationItem.
     _header.text = [_feeditem objectForKey:@"title"];
