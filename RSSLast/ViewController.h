@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong,nonatomic) NSArray *items;
 @property (strong, nonatomic) NSMutableDictionary *feedInfo;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

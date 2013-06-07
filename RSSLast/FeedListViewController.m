@@ -22,6 +22,7 @@
     if (self) {
         // Custom initialization
     self.title = @"Feed List";
+
     }
     return self;
 }
@@ -31,6 +32,7 @@
     [super viewDidLoad];
     UIBarButtonItem *subscribeButton = [[UIBarButtonItem alloc] initWithTitle:@"Subscribe" style:UIBarButtonItemStylePlain target:self action:@selector(subscribeToFeed:)];
     self.navigationItem.rightBarButtonItem = subscribeButton;
+    
     NSMutableDictionary *feed1 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://news.yahoo.com/rss/entertainment",@"url",@"Yahoo Entertainment",@"title", nil];
      NSMutableDictionary *feed2 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://news.yahoo.com/rss/sports",@"url",@"Yahoo Sports",@"title", nil];
      NSMutableDictionary *feed3 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title", nil];
@@ -98,7 +100,6 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell... setting the text of our cell's label
-
     cell.textLabel.text = [[feedlist objectAtIndex:indexPath.row] objectForKey:@"title"];
     return cell;
     

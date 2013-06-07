@@ -34,8 +34,7 @@
     
     if (success)
     {
-        NSLog(@"%d",[_articles count]);
-        return [_articles copy];
+        return _articles;
         //return nil;
     }
     
@@ -53,11 +52,11 @@
    }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
-    NSLog(@"%@",string);
+    //NSLog(@"%@",string);
     [_elementValue appendString:string];}
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
-    NSLog(@"%@",elementName);
+    //NSLog(@"%@",elementName);
     if ([elementName isEqualToString:@"title"]) {
         [_item setObject:_elementValue forKey:elementName];
     }

@@ -22,8 +22,18 @@
     NSString *url = [self.feedInfo objectForKey:@"url"];
     NSString *title = [self.feedInfo objectForKey:@"title"];
     self.title = title;
-    NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:url error:nil];
-    _items = [XMLParser feedItemsWithRSSData:xmlFile];
+    [_activityIndicator startAnimating];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:url error:nil];
+         _items = [XMLParser feedItemsWithRSSData:xmlFile];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_tableView reloadData];
+            [_activityIndicator stopAnimating];
+        });
+
+              });
+    
+
     
 }
 
@@ -63,8 +73,14 @@
     }
     // Configure the cell... setting the text of our cell's label
     NSURL *url = [NSURL URLWithString:[[_items objectAtIndex:indexPath.row]objectForKey:@"url" ]];
-    NSData *data = [NSData dataWithContentsOfURL:url];
-      cell.feedImage.image = [[UIImage alloc] initWithData:data];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        dispatch_async(dispatch_get_main_queue(), ^{
+             cell.feedImage.image = [[UIImage alloc] initWithData:data]; 
+        });
+    });
+   
+    
      cell.title.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"title"];
      cell.date.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
     
@@ -113,11 +129,10 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
      ItemViewController *itemViewController = [[ItemViewController alloc] initWithNibName:@"ItemViewController" bundle:nil];
-    itemViewController.feeditem = [_items objectAtIndex:indexPath.row];
-     [self.navigationController pushViewController:itemViewController animated:YES];
-    
+     itemViewController.feeditem = [_items objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:itemViewController animated:YES];
+
 }
 
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -136,5 +151,9 @@
     //_items = [NSMutableArray array];
     _items = [XMLParser feedItemsWithRSSData:xmlFile];
     [_tableView reloadData];
+}
+- (void)viewDidUnload {
+    [self setActivityIndicator:nil];
+    [super viewDidUnload];
 }
 @end

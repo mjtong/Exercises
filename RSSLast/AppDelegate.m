@@ -19,7 +19,8 @@
     } else {
        self.navController = [[UINavigationController alloc] initWithRootViewController:[[FeedListViewController alloc] initWithNibName:@"FeedListViewController" bundle:nil]];
     }
-   
+    self.navController.navigationBar.tintColor= [UIColor brownColor];
+    [self.navController.navigationBar setBarStyle:UIBarStyleBlackTranslucent];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.rootViewController = self.navController;
