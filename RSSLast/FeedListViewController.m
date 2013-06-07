@@ -33,8 +33,7 @@
     [super viewDidLoad];
     UIBarButtonItem *subscribeButton = [[UIBarButtonItem alloc] initWithTitle:@"Subscribe" style:UIBarButtonItemStylePlain target:self action:@selector(subscribeToFeed:)];
     self.navigationItem.rightBarButtonItem = subscribeButton;
-
-    // Do any additional setup after loading the view from its nib.
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,7 +50,9 @@
 -(void)subscribeToFeed : (UIBarButtonItem *) sender{
     if(!subController){
         subController = [[SubscribeViewController alloc]initWithNibName:@"SubscribeViewController" bundle:nil];
-        subController.delegate = self;}
+        subController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+        subController.delegate = self;
+        }
     [self.navigationController presentModalViewController:subController animated:YES];
     }
 

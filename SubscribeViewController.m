@@ -36,7 +36,12 @@
     NSMutableDictionary *feed6 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
     NSMutableDictionary *feed7 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
     NSMutableDictionary *feed8 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
-    NSMutableArray *staticFeeds = [NSMutableArray arrayWithObjects:feed1,feed2,feed3,feed4,feed5,feed6,feed7,feed8, nil];
+    NSMutableDictionary *feed9 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
+    NSMutableDictionary *feed10 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
+    NSMutableDictionary *feed11 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
+    NSMutableDictionary *feed12 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
+    NSMutableDictionary *feed13 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
+    NSMutableArray *staticFeeds = [NSMutableArray arrayWithObjects:feed1,feed2,feed3,feed4,feed5,feed6,feed7,feed8,feed9,feed10,feed11,feed12,feed13, nil];
     _feedList = [[NSMutableArray alloc] initWithArray:staticFeeds];
 }
 
@@ -70,7 +75,7 @@
     UISwitch *cellSwitch = [[UISwitch alloc] init];
     cellSwitch.tag = indexPath.row;
     cellSwitch.on = [[[_feedList objectAtIndex:indexPath.row] objectForKey:@"subscribed"] boolValue];
-   // NSLog(@"%@",[[_feedList objectAtIndex:indexPath.row] objectForKey:@"subscribed"]);
+   NSLog(@"%@",[[_feedList objectAtIndex:indexPath.row] objectForKey:@"subscribed"]);
     [cellSwitch addTarget:self action:@selector(toggleSwitch:) forControlEvents:UIControlEventValueChanged];
     cell.accessoryView = cellSwitch;
     cell.textLabel.text = [[_feedList objectAtIndex:indexPath.row] objectForKey:@"title"];
@@ -78,10 +83,13 @@
 }
 
 -(void) toggleSwitch : (UISwitch *)sender{
+    
+    /*
     if(sender.on){
         [((NSMutableDictionary *)_feedList[sender.tag]) setObject:@"YES" forKey:@"subscribed"] ;}
     else{
         [((NSMutableDictionary *)_feedList[sender.tag]) setObject:@"NO" forKey:@"subscribed"] ;}
+     */
 }
 /*
  // Override to support conditional editing of the table view.
@@ -131,18 +139,30 @@
 }
 - (IBAction)subscribeDone:(UIBarButtonItem *)sender {
     NSMutableArray* toReturn = [NSMutableArray array];
-    for(int i = 0; i < [_feedList count]; i++){
-       if( [[((NSMutableDictionary*)[_feedList objectAtIndex:i]) objectForKey:@"subscribed"] boolValue] ){
-            [toReturn addObject:_feedList[i]];
+    for (NSInteger i = 0; i < [_subscribeTable numberOfRowsInSection:0]; ++i)
+        {
+            if([((UISwitch*)[((UITableViewCell *)[_subscribeTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]) accessoryView])isOn]){
+                [[_feedList objectAtIndex:i] setObject:@"YES" forKey:@"subscribed"];
+                NSLog(@"sdfsdfsdf");
+                [toReturn addObject:_feedList[i]];
+            }
+            else{
+                [[_feedList objectAtIndex:i] setObject:@"NO" forKey:@"subscribed"];
+            }
         }
-    }
+    
+  //  for(int i = 0; i < [_feedList count]; i++){
+    //   if( [[((UISwitch*)[_feedList objectAtIndex:i]) objectForKey:@"subscribed"] boolValue] ){
+      //      [toReturn addObject:_feedList[i]];
+        //}
+    //}
     //NSLog(@"%d",[toReturn count]);
     [self.delegate subscribeViewControllerDone:toReturn];
 }
 
 - (IBAction)subscribeCancel:(UIBarButtonItem *)sender {
-    //[self.delegate subscribeViewControllerDidFinish:self];
-    [self dismissModalViewControllerAnimated:YES];
+    [_subscribeTable reloadData];
+    [self.delegate subscribeViewControllerDidFinish:self];
 }
 @end
 

@@ -67,9 +67,10 @@
         [_item setObject:_elementValue forKey:elementName];
     }
     else if ([elementName isEqualToString:@"pubDate"]) {
-        [_item setObject:_elementValue forKey:elementName];
-         [ _articles addObject:_item];
-          _item = [NSMutableDictionary dictionary];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [_item setObject:[formatter dateFromString:_elementValue] forKey:elementName];
+        [ _articles addObject:_item];
+        _item = [NSMutableDictionary dictionary];
            }
     else {
         _elementValue = [[NSMutableString alloc] init];
