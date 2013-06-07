@@ -73,7 +73,8 @@
     }
     // Configure the cell... setting the text of our cell's label
     NSURL *url = [NSURL URLWithString:[[_items objectAtIndex:indexPath.row]objectForKey:@"url" ]];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSData *data = [NSData dataWithContentsOfURL:url];
         dispatch_async(dispatch_get_main_queue(), ^{
              cell.feedImage.image = [[UIImage alloc] initWithData:data]; 

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FeedListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+#import "SubscribeViewController.h"
+@interface FeedListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, SubscribeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *feedlisttable;
 
 @end

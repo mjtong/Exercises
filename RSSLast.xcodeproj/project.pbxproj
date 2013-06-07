@@ -22,6 +22,8 @@
 		E5BE45FB175CAFFC00A9471D /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BE45F9175CAFFC00A9471D /* ViewController_iPhone.xib */; };
 		E5BE45FE175CAFFC00A9471D /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BE45FC175CAFFC00A9471D /* ViewController_iPad.xib */; };
 		E5BE4606175CB0B000A9471D /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E5BE4605175CB0B000A9471D /* XMLParser.m */; };
+		E5C011CF1761821A009C31A8 /* SubscribeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C011CD1761821A009C31A8 /* SubscribeViewController.m */; };
+		E5C011D01761821A009C31A8 /* SubscribeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C011CE1761821A009C31A8 /* SubscribeViewController.xib */; };
 		E5C1110D17601AB100AB1D92 /* FeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C1110B17601AB100AB1D92 /* FeedListViewController.m */; };
 		E5C1110E17601AB100AB1D92 /* FeedListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C1110C17601AB100AB1D92 /* FeedListViewController.xib */; };
 		E5C111121760351600AB1D92 /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C111101760351600AB1D92 /* ItemViewController.m */; };
@@ -54,6 +56,9 @@
 		E5BE45FD175CAFFC00A9471D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		E5BE4604175CB0B000A9471D /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
 		E5BE4605175CB0B000A9471D /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		E5C011CC1761821A009C31A8 /* SubscribeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubscribeViewController.h; sourceTree = "<group>"; };
+		E5C011CD1761821A009C31A8 /* SubscribeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubscribeViewController.m; sourceTree = "<group>"; };
+		E5C011CE1761821A009C31A8 /* SubscribeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubscribeViewController.xib; sourceTree = "<group>"; };
 		E5C1110A17601AB100AB1D92 /* FeedListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedListViewController.h; sourceTree = "<group>"; };
 		E5C1110B17601AB100AB1D92 /* FeedListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedListViewController.m; sourceTree = "<group>"; };
 		E5C1110C17601AB100AB1D92 /* FeedListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeedListViewController.xib; sourceTree = "<group>"; };
@@ -84,6 +89,9 @@
 		E5BE45D2175CAFFC00A9471D = {
 			isa = PBXGroup;
 			children = (
+				E5C011CC1761821A009C31A8 /* SubscribeViewController.h */,
+				E5C011CD1761821A009C31A8 /* SubscribeViewController.m */,
+				E5C011CE1761821A009C31A8 /* SubscribeViewController.xib */,
 				E5347E8F175F1EA40061C292 /* CustomTableViewCell.h */,
 				E5C1111417604B7F00AB1D92 /* FullStoryViewController.h */,
 				E5C1111517604B7F00AB1D92 /* FullStoryViewController.m */,
@@ -213,6 +221,7 @@
 				E5C1110E17601AB100AB1D92 /* FeedListViewController.xib in Resources */,
 				E5C111131760351600AB1D92 /* ItemViewController.xib in Resources */,
 				E5C1111817604B7F00AB1D92 /* FullStoryViewController.xib in Resources */,
+				E5C011D01761821A009C31A8 /* SubscribeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +241,7 @@
 				E5C1110D17601AB100AB1D92 /* FeedListViewController.m in Sources */,
 				E5C111121760351600AB1D92 /* ItemViewController.m in Sources */,
 				E5C1111717604B7F00AB1D92 /* FullStoryViewController.m in Sources */,
+				E5C011CF1761821A009C31A8 /* SubscribeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
