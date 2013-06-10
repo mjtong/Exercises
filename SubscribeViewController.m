@@ -28,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.feedList = [[NSUserDefaults standardUserDefaults]objectForKey:@"feedList"];
+    if(!self.feedList){
     NSMutableDictionary *feed1 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://news.yahoo.com/rss/entertainment",@"url",@"Yahoo Entertainment",@"title",@"NO",@"subscribed", nil];
     NSMutableDictionary *feed2 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://news.yahoo.com/rss/sports",@"url",@"Yahoo Sports",@"title",@"NO",@"subscribed", nil];
     NSMutableDictionary *feed3 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
@@ -42,7 +44,9 @@
     NSMutableDictionary *feed12 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
     NSMutableDictionary *feed13 = [[NSMutableDictionary alloc]initWithObjectsAndKeys:@"http://rss.news.yahoo.com/rss/mostviewed",@"url",@"Yahoo News",@"title",@"NO",@"subscribed", nil];
     NSMutableArray *staticFeeds = [NSMutableArray arrayWithObjects:feed1,feed2,feed3,feed4,feed5,feed6,feed7,feed8,feed9,feed10,feed11,feed12,feed13, nil];
+
     _feedList = [[NSMutableArray alloc] initWithArray:staticFeeds];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -143,7 +147,6 @@
         {
             if([((UISwitch*)[((UITableViewCell *)[_subscribeTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]) accessoryView])isOn]){
                 [[_feedList objectAtIndex:i] setObject:@"YES" forKey:@"subscribed"];
-                NSLog(@"sdfsdfsdf");
                 [toReturn addObject:_feedList[i]];
             }
             else{
@@ -157,6 +160,8 @@
         //}
     //}
     //NSLog(@"%d",[toReturn count]);
+    [[NSUserDefaults standardUserDefaults] setObject:toReturn forKey:@"subscribed"];
+    [[NSUserDefaults standardUserDefaults] setObject:self.feedList forKey:@"feedList"];
     [self.delegate subscribeViewControllerDone:toReturn];
 }
 

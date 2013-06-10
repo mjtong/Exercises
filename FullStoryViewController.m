@@ -7,7 +7,7 @@
 //
 
 #import "FullStoryViewController.h"
-
+#import "MBProgressHUD.h"
 @interface FullStoryViewController ()
 
 @end
@@ -28,7 +28,11 @@
     [super viewDidLoad];
     NSURL *link = [[NSURL alloc]initWithString:_url];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:link];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:_webView animated:YES];
+    hud.labelText = @"Loading";
     [_webView loadRequest:request];
+        
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,5 +44,8 @@
 - (void)viewDidUnload {
     [self setWebView:nil];
     [super viewDidUnload];
+}
+-(void) webViewDidFinishLoad:(UIWebView *)webView{
+     [MBProgressHUD hideHUDForView:_webView animated:YES];
 }
 @end

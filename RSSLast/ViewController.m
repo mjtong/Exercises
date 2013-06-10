@@ -22,13 +22,14 @@
     NSString *url = [self.feedInfo objectForKey:@"url"];
     NSString *title = [self.feedInfo objectForKey:@"title"];
     self.title = title;
-    [_activityIndicator startAnimating];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData *xmlFile = [NSURLConnection sendSynchronousRequestWithString:url error:nil];
          _items = [XMLParser feedItemsWithRSSData:xmlFile];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             [_tableView reloadData];
-            [_activityIndicator stopAnimating];
+           // [_activityIndicator stopAnimating];
         });
 
               });
@@ -73,14 +74,18 @@
     }
     // Configure the cell... setting the text of our cell's label
     NSURL *url = [NSURL URLWithString:[[_items objectAtIndex:indexPath.row]objectForKey:@"url" ]];
-    
+    if(url){
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSData *data = [NSData dataWithContentsOfURL:url];
         dispatch_async(dispatch_get_main_queue(), ^{
              cell.feedImage.image = [[UIImage alloc] initWithData:data];
             
         });
-    });
+    });}
+    else{
+        cell.feedImage.image = [UIImage imageNamed:@"default.gif"];
+        
+    }
      cell.title.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"title"];
     
     //For Parsing
@@ -157,7 +162,7 @@
     [_tableView reloadData];
 }
 - (void)viewDidUnload {
-    [self setActivityIndicator:nil];
+
     [super viewDidUnload];
 }
 @end

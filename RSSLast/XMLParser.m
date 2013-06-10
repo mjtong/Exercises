@@ -68,10 +68,8 @@
     }
     else if ([elementName isEqualToString:@"pubDate"]) {
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-        NSLog(@"%@",_elementValue);
         [formatter setDateFormat:@"EEE, d MMM yyyy HH:mm:ss z"];
         NSDate *date = [formatter dateFromString:_elementValue];
-        NSLog(@"HAHA %@",date);
         //[_item setObject:[formatter dateFromString:_elementValue] forKey:elementName];
         
         [_item setObject:date forKey:elementName];

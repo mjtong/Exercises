@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "MBProgressHUD.h"
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong,nonatomic) NSArray *items;
 @property (strong, nonatomic) NSMutableDictionary *feedInfo;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+//@property (weak, nonatomic) IBOutlet MBProgressHUD *progressHUD;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

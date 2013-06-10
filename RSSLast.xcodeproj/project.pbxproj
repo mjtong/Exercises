@@ -31,6 +31,8 @@
 		E5C111131760351600AB1D92 /* ItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C111111760351600AB1D92 /* ItemViewController.xib */; };
 		E5C1111717604B7F00AB1D92 /* FullStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C1111517604B7F00AB1D92 /* FullStoryViewController.m */; };
 		E5C1111817604B7F00AB1D92 /* FullStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C1111617604B7F00AB1D92 /* FullStoryViewController.xib */; };
+		E5C6BDD31765741500911686 /* default.gif in Resources */ = {isa = PBXBuildFile; fileRef = E5C6BDD21765741500911686 /* default.gif */; };
+		E5C6BDD617657B1100911686 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C6BDD517657B1000911686 /* MBProgressHUD.m */; };
 		E5EBC139175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,9 @@
 		E5C1111417604B7F00AB1D92 /* FullStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullStoryViewController.h; sourceTree = "<group>"; };
 		E5C1111517604B7F00AB1D92 /* FullStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullStoryViewController.m; sourceTree = "<group>"; };
 		E5C1111617604B7F00AB1D92 /* FullStoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullStoryViewController.xib; sourceTree = "<group>"; };
+		E5C6BDD21765741500911686 /* default.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = default.gif; sourceTree = "<group>"; };
+		E5C6BDD417657B1000911686 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E5C6BDD517657B1000911686 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E5EBC137175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.h"; sourceTree = "<group>"; };
 		E5EBC138175DAE080051F304 /* NSURLConnection+NSURLConnectionSendRequestAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLConnection+NSURLConnectionSendRequestAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,11 +96,14 @@
 		E5BE45D2175CAFFC00A9471D = {
 			isa = PBXGroup;
 			children = (
+				E5C6BDD21765741500911686 /* default.gif */,
 				E5C011CC1761821A009C31A8 /* SubscribeViewController.h */,
 				E5C011CD1761821A009C31A8 /* SubscribeViewController.m */,
 				E5C011D11761B729009C31A8 /* Feed List.plist */,
 				E5C011CE1761821A009C31A8 /* SubscribeViewController.xib */,
 				E5347E8F175F1EA40061C292 /* CustomTableViewCell.h */,
+				E5C6BDD417657B1000911686 /* MBProgressHUD.h */,
+				E5C6BDD517657B1000911686 /* MBProgressHUD.m */,
 				E5C1111417604B7F00AB1D92 /* FullStoryViewController.h */,
 				E5C1111517604B7F00AB1D92 /* FullStoryViewController.m */,
 				E5C1111617604B7F00AB1D92 /* FullStoryViewController.xib */,
@@ -226,6 +234,7 @@
 				E5C1111817604B7F00AB1D92 /* FullStoryViewController.xib in Resources */,
 				E5C011D01761821A009C31A8 /* SubscribeViewController.xib in Resources */,
 				E5C011D21761B729009C31A8 /* Feed List.plist in Resources */,
+				E5C6BDD31765741500911686 /* default.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +255,7 @@
 				E5C111121760351600AB1D92 /* ItemViewController.m in Sources */,
 				E5C1111717604B7F00AB1D92 /* FullStoryViewController.m in Sources */,
 				E5C011CF1761821A009C31A8 /* SubscribeViewController.m in Sources */,
+				E5C6BDD617657B1100911686 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

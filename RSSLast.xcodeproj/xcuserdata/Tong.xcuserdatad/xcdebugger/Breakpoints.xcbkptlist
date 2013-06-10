@@ -15,29 +15,29 @@
          endingLineNumber = "8">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RSSLast/XMLParser.m"
-         timestampString = "392519232.901924"
+         timestampString = "392525676.031851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88">
+         startingLineNumber = "86"
+         endingLineNumber = "86">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RSSLast/XMLParser.m"
-         timestampString = "392519232.901924"
+         timestampString = "392525676.031851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "88"
-         endingLineNumber = "88">
+         startingLineNumber = "86"
+         endingLineNumber = "86">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RSSLast/CustomTableViewCell.h"
@@ -48,7 +48,7 @@
          endingLineNumber = "15">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "RSSLast/CustomTableViewCell.h"

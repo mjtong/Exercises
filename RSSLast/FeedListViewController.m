@@ -36,6 +36,14 @@
    
 }
 
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    feedlist = [[NSUserDefaults standardUserDefaults]objectForKey:@"subscribed"];
+    
+    
+    [_feedlisttable reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -69,7 +77,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //Where we configure the cell in each row
-    
+
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell;
     
@@ -78,6 +86,7 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     // Configure the cell... setting the text of our cell's label
+    
     cell.textLabel.text = [[feedlist objectAtIndex:indexPath.row] objectForKey:@"title"];
     return cell;
     
@@ -136,6 +145,5 @@
 -(void)subscribeViewControllerDone:(NSMutableArray *)listOfFeeds{
     feedlist = listOfFeeds;
     [self dismissModalViewControllerAnimated:YES];
-    [_feedlisttable reloadData];
 }
 @end

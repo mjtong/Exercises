@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FullStoryViewController : UIViewController
+#import "MBProgressHUD.h"
+@interface FullStoryViewController : UIViewController <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong,nonatomic) NSString *url;
 @end
