@@ -84,20 +84,11 @@
      cell.title.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"title"];
     
     //For Parsing
-  /*  NSCalendar *gregorian=[[NSCalendar alloc] initWithCalendarIdentifier: NSGregorianCalendar];
-    [gregorian setTimeZone:[NSTimeZone defaultTimeZone]];
-     NSDateComponents *timeZoneComps=[[NSDateComponents alloc] init];
     NSDate * feedDate = [[_items objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"EEE, d MMM yyyy HH:mm:ss "];
     NSString *toParse = [formatter stringFromDate:feedDate];
-    [toParse componentsSeparatedByCharactersInSet:[NSCharacter characterSetWithCharactersInString:@": -"]];
-    [timeZoneComps setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:60*60*7]];
-    //specify whatever day, month, and year is appropriate
-    NSDate *date=[gregorian dateFromComponents:timeZoneComps];
-    NSLog(@"%@",[date descriptionWithLocale:@"en_US"]);
-    NSLog(@"%@",[[NSTimeZone defaultTimeZone]description]);
-    */
-     cell.date.text = [[_items objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
+     cell.date.text = toParse;
      return cell;
 
  }

@@ -35,7 +35,10 @@
     while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
         s = [s stringByReplacingCharactersInRange:r withString:@""];
     _header.text = [_feeditem objectForKey:@"title"];
-    _date.text = [_feeditem objectForKey:@"pubDate"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"EEE, d MMM yyyy HH:mm:ss z"];
+    NSString *dateString = [formatter stringFromDate:[_feeditem objectForKey:@"pubDate"]];
+    _date.text = dateString;
     _content.text = s;
 }
 
